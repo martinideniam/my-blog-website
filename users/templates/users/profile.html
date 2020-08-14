@@ -1,0 +1,27 @@
+{% extends 'posts/base.html' %} {% load static %} {% block content %} 
+{% if messages %}
+<div class="messages">
+  {% for message in messages %}
+  <h1>{{message}}</h1>
+  {% endfor %}
+</div>
+{% endif %}
+<div class="profile-container">
+  <img src="{{ user.profile.image.url }}" alt="" class="profile-picture" />
+  <div class="profile-info">
+    <h2 class="profile-username">{{user.username}}</h2>
+    <p class="profile-email">{{user.email}}</p>
+  </div>
+</div>
+<form
+  class="register-container"
+  enctype="multipart/form-data"
+  action=""
+  method="POST"
+>
+  <legend>Update your profile info, if you wish. Ignore, if you don't.</legend>
+  {% csrf_token %} {{ u_form }} {{p_form}}
+  <button class="signup-button" type="submit">Update</button>
+</form>
+
+{% endblock content%}

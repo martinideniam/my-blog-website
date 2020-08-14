@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+main {
+  overflow: hidden;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$text-color: rgba(0, 0, 0, 0.8);
+$text-hover: black;
+
+@import "./header";
+@import "./posts";
+@import "./register";
+@import "./logout";
+@import "./profile";
+
+@media screen and (max-width: 730px) {
+  // make a burger menu for header
+  .burger {
+    display: block;
+    @include flex(column, space-evenly, center);
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .nav-links {
+    display: none;
+    min-height: 50%;
+    padding: 15vh 3rem;
+    opacity: 1;
+    background: $text-color;
+    background: rgb(121, 120, 120);
+    border-radius: 0 0 0 10px;
+  }
+
+  .nav-link-a {
+    color: white;
+    padding-right: 2rem;
+  }
+
+  .show-nav-links {
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    @include flex(column, space-between, center);
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .rotateLineOne {
+    transform-origin: center;
+    margin: 0;
+    transform: translateY(75%) rotateZ(-45deg);
+    background: white;
+  }
+  .rotateLineThree {
+    transform-origin: center;
+    transform: translateY(-75%) rotateZ(45deg);
+    background: white;
+  }
+
+  .post-container {
+    width: 90%;
+    margin: 5rem auto;
+  }
+
+  .register-container {
+    width: 90%;
+    margin: 5rem auto;
+  }
+
+  .messages {
+    width: 90%;
+    margin: 3rem auto 3rem auto;
+  }
+
+  .logout-container {
+    width: 100%;
+  }
+
+  .logout-title {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .logout-content {
+    flex: 1 1 40rem;
+    font-size: 2rem;
+    margin: 2rem 0rem;
+  }
+
+  .profile-container {
+    flex-wrap: wrap;
+    @include flex(row, center, center);
+  }
+
+  .profile-info {
+    flex: 2 1 40rem;
+    @include flex(column, space-between, center);
+    text-align: left;
+  }
+}

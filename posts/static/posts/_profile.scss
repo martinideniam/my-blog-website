@@ -1,0 +1,35 @@
+.profile-container {
+  margin: 5rem 2rem;
+  padding: 3rem;
+  border: 0.5px white solid;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: $text-color;
+  min-height: 20rem;
+  @include flex(row, space-between, center);
+}
+
+.profile-picture {
+  object-position: center;
+  object-fit: cover;
+  border-radius: 2rem;
+  height: 100px;
+  width: 100px;
+  border: 0.5px $text-color solid;
+  margin: 1rem 2rem 1rem 1rem;
+}
+
+.profile-info {
+  flex: 1 1 20rem;
+  @include flex(column, space-between, left);
+}
+
+.profile-username {
+  font-size: 4rem;
+  margin: 0 0 1rem 0;
+}
+
+.profile-email {
+  font-size: 3rem;
+  margin: 2rem 0rem;
+}

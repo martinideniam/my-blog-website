@@ -1,0 +1,65 @@
+header {
+  min-height: 11vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: white;
+  padding: 2rem 0rem;
+  width: 100%;
+  @include flex(row, center, center);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  @include flex(row, center, center);
+  width: 90%;
+}
+
+#logo-div {
+  flex: 1 1 40rem;
+}
+
+#logo-a {
+  padding: 1.5rem 2rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2rem;
+  color: $text-color;
+  text-decoration: none;
+}
+
+#logo-a:hover {
+  color: $text-hover;
+}
+
+.nav-links {
+  @include flex(row, space-between, center);
+  list-style: none;
+  font-size: 2rem;
+}
+
+.nav-link-a {
+  color: $text-color;
+  text-decoration: none;
+  padding: 1.5rem 0rem 1.5rem 5rem;
+  border: 1px rgba(0, 0, 0, 0) solid;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.nav-link-a:hover {
+  color: $text-hover;
+}
+
+.burger {
+  display: none;
+}
+
+.line1,
+.line2,
+.line3 {
+  padding: 2px 15px;
+  margin: 2px;
+  border-radius: 1rem;
+  background: $text-color;
+}

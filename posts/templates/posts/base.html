@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'posts/general.css' %}" />
+    <title>The worst blog app!</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo-div">
+          <a id="logo-a" href="{% url 'posts-home' %}">MyBlog</a>
+        </div>
+        <ul class="nav-links">
+          {% if user.is_authenticated %}
+          <li class="nav-link">
+            <a class="nav-link-a" href="{% url 'users-profile' %}">Profile</a>
+          </li>
+          <li class="nav-link">
+            <a class="nav-link-a" href="{% url 'logout' %}">Log out</a>
+          </li>
+          {% else %}
+          <li class="nav-link">
+            <a class="nav-link-a" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-link">
+            <a class="nav-link-a" href="{% url 'users-register' %}">Sign Up</a>
+          </li>
+          {% endif %}
+        </ul>
+        <div class="burger">
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      {% block content %} {% endblock content %}
+      <script src="{% static 'posts/app.js'%}"></script>
+    </main>
+  </body>
+</html>

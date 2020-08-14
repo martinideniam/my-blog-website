@@ -1,0 +1,12 @@
+{% extends "posts/base.html" %} {% block content %}
+<form class="register-container" action="" method="POST">
+  {% csrf_token %} {{ form }}
+  <button class="signup-button" type="submit">Log in</button>
+  <hr />
+  <p class="register-footer">
+    Don't have an account yet?
+    <a href="{% url 'users-register' %}">Sign up now</a>
+  </p>
+</form>
+
+{% endblock content %}
